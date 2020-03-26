@@ -141,35 +141,67 @@ It will auto heat up if the current temp doesn't reach the target.
 #command of user-defined function
 >function_btn1_cmd:M84;
 
+#black (0-0-0) M42 P4 S0;M42 P5 S0;M42 P6 S0;
+#white (1-1-1) M42 P4 S255;M42 P5 S255;M42 P6 S255;
+#green (1-0-0) M42 P4 S255;M42 P5 S0;M42 P6 S0;
+#red (0-1-0) M42 P4 S0;M42 P5 S255;M42 P6 S0;
+#blue (0-0-1) M42 P4 S0;M42 P5 S0;M42 P6 S255;
+#cyan (1-0-1) M42 P4 S255;M42 P5 S0;M42 P6 S255;
+#yellow	(1-1-0) M42 P4 S255;M42 P5 S255;M42 P6 S0;
+#magenta (0-1-1) M42 P4 S0;M42 P5 S255;M42 P6 S55;
+
 #set number of  "More" button 
 >moreitem_pic_cnt:7
 
-#edit command for 1~7 "More" button,each command must be separated by semicolon ";"
+#the files are named: bmp_custom1..7
+#edit command for 1~7 "More" button, each command must be separated by semicolon
+#########################################
+
+# Start mesh bed leveling
 >moreitem_button1_cmd:G29 S1;
 
+# Next mesh bed leveling point
 >moreitem_button2_cmd:G29 S2;
 
+# Raise Z by 0.02
 >moreitem_button3_cmd:G91; G1 Z0.02; G90;
 
+# Lower Z by 0.02
 >moreitem_button4_cmd:G91; G1 Z-0.02; G90;
 
+# Save to EEPROM
 >moreitem_button5_cmd:M500;
 
->moreitem_button6_cmd:M104 S200 E0; M140 S60;
+# Pre heat PLA, 200/80
+>moreitem_button6_cmd:M104 S200 E0; M140 S80;
 
+# PID Auto Tune
 >moreitem_button7_cmd:M303 E0 S200 C10 U1;
 
 #how many "More" button display on screen interface
 >morefunc_cnt:5
 
 #command setting on button1~6
->morefunc1_cmd:M42 P4 S0;M42 P5 S0;M42 P6 S0;
->morefunc2_cmd:M42 P4 S255;M42 P5 S255;M42 P6 S255;
->morefunc3_cmd:M290 Z0.02;
->morefunc4_cmd:M290 Z-0.02;
->morefunc5_cmd:M500;
->morefunc6_cmd:G28;
+#########################################
 
+# Lights Out
+>morefunc1_cmd:M42 P4 S0;M42 P5 S0;M42 P6 S0;
+
+# Lights on (white)
+>morefunc2_cmd:M42 P4 S255;M42 P5 S255;M42 P6 S255;
+
+# Live adjust Z +0.02
+>morefunc3_cmd:M290 Z0.02;
+
+# Live adjust Z -0.02
+>morefunc4_cmd:M290 Z-0.02;
+
+# Save to EEPROM
+>morefunc5_cmd:M500;
+
+#not used currently
+>morefunc6_cmd:G28;
+#########################################
 #---------------------------------------------------------------------------------
 ##### Display Customization(button and logo customized see User's Manual) #######
 

@@ -137,9 +137,9 @@ It will auto heat up if the current temp doesn't reach the target.
 #user-defined function1 and 2.(display this button .  disable: 0; enable: 1)
 >cfg_function_btn1_display:1
 
-
 #command of user-defined function
 >function_btn1_cmd:M84;
+
 
 #black (0-0-0) M42 P4 S0;M42 P5 S0;M42 P6 S0;
 #white (1-1-1) M42 P4 S255;M42 P5 S255;M42 P6 S255;
@@ -150,12 +150,12 @@ It will auto heat up if the current temp doesn't reach the target.
 #yellow	(1-1-0) M42 P4 S255;M42 P5 S255;M42 P6 S0;
 #magenta (0-1-1) M42 P4 S0;M42 P5 S255;M42 P6 S55;
 
-#set number of  "More" button 
+
+#set number of  "More" button
 >moreitem_pic_cnt:7
 
 #the files are named: bmp_custom1..7
 #edit command for 1~7 "More" button, each command must be separated by semicolon
-#########################################
 
 # Start mesh bed leveling
 >moreitem_button1_cmd:G29 S1;
@@ -169,25 +169,25 @@ It will auto heat up if the current temp doesn't reach the target.
 # Lower Z by 0.02
 >moreitem_button4_cmd:G91; G1 Z-0.02; G90;
 
-# Save to EEPROM
->moreitem_button5_cmd:M500;
+# Save to EEPROM (red -> green)
+>moreitem_button5_cmd:M42 P4 S0;M42 P5 S255;M42 P6 S0;M500;G4 S1;M42 P4 S255;M42 P5 S0;M42 P6 S0;
 
-# Pre heat PLA, 200/80
->moreitem_button6_cmd:M104 S200 E0; M140 S80;
+# Pre heat PLA, 200/80 (blue -> green)
+>moreitem_button6_cmd:M42 P4 S0;M42 P5 S0;M42 P6 S255;M104 S200; M140 S80; G4 P500;M42 P4 S255;M42 P5 S0;M42 P6 S0;
 
 # PID Auto Tune
 >moreitem_button7_cmd:M303 E0 S200 C10 U1;
+
 
 #how many "More" button display on screen interface
 >morefunc_cnt:5
 
 #command setting on button1~6
-#########################################
 
-# Lights Out
+# Lights Off
 >morefunc1_cmd:M42 P4 S0;M42 P5 S0;M42 P6 S0;
 
-# Lights on (white)
+# Lights On (white)
 >morefunc2_cmd:M42 P4 S255;M42 P5 S255;M42 P6 S255;
 
 # Live adjust Z +0.02
@@ -196,13 +196,14 @@ It will auto heat up if the current temp doesn't reach the target.
 # Live adjust Z -0.02
 >morefunc4_cmd:M290 Z-0.02;
 
-# Save to EEPROM
->morefunc5_cmd:M500;
+# Save to EEPROM (red -> green)
+>morefunc5_cmd:M42 P4 S0;M42 P5 S255;M42 P6 S0;M500;G4 S1;M42 P4 S255;M42 P5 S0;M42 P6 S0;
 
 #not used currently
 >morefunc6_cmd:G28;
-#########################################
+
 #---------------------------------------------------------------------------------
+
 ##### Display Customization(button and logo customized see User's Manual) #######
 
 #the color of screen background

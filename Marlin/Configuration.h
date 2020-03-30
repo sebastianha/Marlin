@@ -483,10 +483,10 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // Artillery Genius
-  #define DEFAULT_Kp 12.42
-  #define DEFAULT_Ki 0.85
-  #define DEFAULT_Kd 45.26
+  // Artillery Genius OWN
+  #define DEFAULT_Kp 11.56
+  #define DEFAULT_Ki 0.79
+  #define DEFAULT_Kd 42.38
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -538,10 +538,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  // Artillery Genius
-  #define DEFAULT_bedKp 31.71
-  #define DEFAULT_bedKi 3.99
-  #define DEFAULT_bedKd 168.01
+  // Artillery Genius OWN
+  #define DEFAULT_bedKp 38.26
+  #define DEFAULT_bedKi 7.41
+  #define DEFAULT_bedKd 131.65
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)

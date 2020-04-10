@@ -8,7 +8,7 @@
 >cfg_machine_type:1
 
 #baud rate (9600:1; 57600:2; 115200:3; 250000:4)
->cfg_baud_rate:4
+>cfg_baud_rate:3
 
 #multi-language(enable:1, disable:0)
 >cfg_multiple_language:0
@@ -24,8 +24,8 @@
 >cfg_custom_bed_flag:1
 
 #the max target temp of extruder and heated bed
->cfg_max_sprayer_temperature:270
->cfg_max_hotbed_temperature:150
+>cfg_max_sprayer_temperature:230
+>cfg_max_hotbed_temperature:110
 
 #pause position (-1 is invalid; Z-axis is relative position)
 >cfg_XPOS:-1
@@ -50,7 +50,7 @@
 #set PB1 signal (high level:1; low level:0)
 >cfg_PB1_trigger_Level:0
 
-#set error range of Z-axis on breakpoints recovery 
+#set error range of Z-axis on breakpoints recovery
 >cfg_breakpoint_z_error:0.2
 
 #---------------------------------------------------------------------------
@@ -71,7 +71,7 @@
 It will auto heat up if the current temp doesn't reach the target.
 >cfg_filament_load_limit_temperature:200
 
-#The length of Load filament before unloader filament. 
+#The length of Load filament before unloader filament.
 >cfg_unload_retract_length:5
 
 #The speed of load filament  before unloader filament.
@@ -95,14 +95,14 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_point2:175,45
 >cfg_point3:175,175
 >cfg_point4:45,175
->cfg_point5:113,112
+>cfg_point5:110,110
 
 #the travel speed of leveling(mm/min)
 >cfg_leveling_z_speed:1500
 >cfg_leveling_xy_speed:8000
 
 #---------------------------------------------------------------------------
- 
+
 #############  WIFI Function  ##########################################
 
 #wifi model(MKS WIFI TFT:0;  MKS HLK-WIFI:1)
@@ -141,30 +141,30 @@ It will auto heat up if the current temp doesn't reach the target.
 >function_btn1_cmd:M84;
 
 #set number of  "More" button 
->moreitem_pic_cnt:6
+>moreitem_pic_cnt:7
 
 #edit command for 1~7 "More" button,each command must be separated by semicolon ";"
 >moreitem_button1_cmd:M502; M500; 
 
->moreitem_button2_cmd:G28; G91; G0 X28 Y-33; G90; G1 Z0;
+>moreitem_button2_cmd:G28; G91; G0 X35 Y-30; G90; G1 Z0;
 
->moreitem_button3_cmd:M290 Z0.025; M500;
+>moreitem_button3_cmd:M290 Z0.02; M500;
 
->moreitem_button4_cmd:M290 Z-0.025; M500;
+>moreitem_button4_cmd:M290 Z-0.02; M500;
 
 >moreitem_button5_cmd:M280 P0 S60; G4 P500; M280 P0 S90; G4 P200
 
 >moreitem_button6_cmd:G28; G29;
 
->moreitem_button7_cmd:G28;
-
+# Pre heat PLA, 200/80 (blue -> green)
+>moreitem_button7_cmd:M42 P4 S0;M42 P5 S0;M42 P6 S255;M104 S200; M140 S70; G4 P500;M42 P4 S255;M42 P5 S0;M42 P6 S0;
 
 #how many "More" button display on screen interface
 >morefunc_cnt:4
 
 #command setting on button1~6
->morefunc1_cmd:M290 Z0.025; M500;
->morefunc2_cmd:M290 Z-0.025; M500;
+>morefunc1_cmd:M290 Z0.02; M500;
+>morefunc2_cmd:M290 Z-0.02; M500;
 >morefunc3_cmd:M42 P4 S0;M42 P5 S0;M42 P6 S0;
 >morefunc4_cmd:M42 P4 S255;M42 P5 S255;M42 P6 S255;
 >morefunc6_cmd:G28;
@@ -190,14 +190,14 @@ It will auto heat up if the current temp doesn't reach the target.
 #the color of file text
 >cfg_filename_color:0xFFFFFF
 
-#the color of background in printing 
+#the color of background in printing
 >cfg_printingstat_word_background_color:0x000000
 
 #the color of text in printing status
 >cfg_printingstat_word_color:0xFFFFFF
 
 #3D effects setting (disable: 0; enable: 1)
->cfg_BUTTON_3D_effects:1
+>cfg_BUTTON_3D_effects:0
 
 #The screen is flipped 180°(0: no flip, 1: flip)
 >cfg_OVERTURN_180:0

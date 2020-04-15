@@ -1,0 +1,4 @@
+- Test filament runout sensor: FILAMENT_RUNOUT_SENSOR
+  https://marlinfw.org/docs/configuration/configuration.html#filament-runout-sensor
+
+
